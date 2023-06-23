@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/games" method="POST">
+    <label>Category:</label>
+    <select name="category">
+        <option value="AAA">AAA</option>
+        <option value="indie">Indie</option>
+    </select>
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Release Date:</label>
+    <input type="date" name="releaseDate">
+    <label>Genre:</label>
+    <select name="genre">
+        <option value="Action">Action</option>
+        <option value="Action-Adventure">Action-Adventure</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="Role-playing">Role-playing</option>
+        <option value="Simulation">Simulation</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Sports">Sports</option>
+        <option value="MMO">MMO</option>
+        <option value="Other">Other</option>
+    </select>
+    <label>Console:</label>
+    <select name="console">
+        <option value="Playstation">Playstation</option>
+        <option value="Xbox">Xbox</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="PC">PC</option>
+    </select>
+    <label>Image URL link:</label>
+    <input type="text" name="image">
+    <label>Description:</label>
+    <input type="text" name="description">
+    <input type="submit" value="Add Game">
+</form>
+
+<%- include('../partials/footer') %>

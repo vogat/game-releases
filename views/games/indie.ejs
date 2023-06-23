@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<game>
+    <ul>
+        <% games.forEach(function(g) { %>
+            <h4><%= g.name %></h4>
+            <img src="<%g.image%>">
+            <button><a href="/games/<%= g._id%>">DETAILS</a></button>
+        <% }); %>
+    </ul>
+</game>
+
+<%- include('../partials/footer') %>
