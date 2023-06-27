@@ -4,7 +4,7 @@
     <div>Name:</div>
     <div><%= games.name %></div>
     <div>Release Date:</div>
-    <div><%= games.releaseDate %></div>
+    <div><%= games.releaseDate.getUTCMonth() + "/" + games.releaseDate.getUTCDate() + "/" + games.releaseDate.getUTCFullYear() %></div>
     <div>Genre:</div>
     <div><%= games.genre %></div>
     <div>Console:</div>
@@ -12,5 +12,45 @@
     <div>Description:</div>
     <div><%= games.description %></div>
 </section>
+
+<br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+  action="/games/<%= games._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+
+  <% if (games.reviews && games.reviews.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% games.reviews.forEach(function(b) { %>
+                <tr>
+                    <td><%= b.createdAt.toLocaleDateString() %></td>
+                    <td><%= b.content %></td>
+                    <td><%= b.rating %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Reviews Yet</h5>
+<% } %>
+
+</form>
 
 <%- include('../partials/footer') %>

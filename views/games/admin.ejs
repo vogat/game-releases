@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+            <th>Console</th>
+            <th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% games.forEach(function(g) { %>
+            <tr>
+                <td><form
+                    action="/games/<%= g.id %>?_method=DELETE"
+                    method="POST"
+                    class="delete-form"
+                    >
+                    <button type="submit">X</button>
+                </form></td>
+                <td><%= g.category %></td>
+                <td><%= g.name %></td>
+                <td><%= g.releaseDate.getUTCMonth() + "/" + g.releaseDate.getUTCDate() + "/" + g.releaseDate.getUTCFullYear() %></td>
+                <td><%= g.genre %></td>
+                <td><%= g.console %></td>
+                <td><%= g.image %></td>
+                <td><a href="/games/<%= g._id %>/edit">EDIT DETAILS</a></td>
+                <td><a href="/games/<%= g._id %>/editCom">EDIT COMMENTS</a></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>

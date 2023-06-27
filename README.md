@@ -4,7 +4,7 @@ This website will show current game releases for the year 2023. THis will includ
 # schedule
 6/22 - basic CRUD
 6/23 - basic CRUD
-6/26 - CSS/Partials
-6/27 - embedding reviews/comments
+6/26 - embedding reviews/comments
+6/27 - CSS/Partials
 6/28 - sorting algorithms(filters) (e.g. rpg, fps, rts, etc.)
 6/29 - finishing touches

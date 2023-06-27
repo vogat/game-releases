@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<% if (games.reviews && games.reviews.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% games.reviews.forEach(function(g) { %>
+                <tr>
+                    <td><form
+                        action="/games/<%= g.id %>/reviews?_method=DELETE"
+                        method="POST"
+                        class="delete-review"
+                        >
+                        <button type="submit">X</button>
+                    </form></td>
+                    <td><%= g.createdAt.toLocaleDateString() %></td>
+                    <td><%= g.content %></td>
+                    <td><%= g.rating %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Reviews Yet</h5>
+<% } %>
+
+</form>
+
+<%- include('../partials/footer') %>

@@ -3,9 +3,11 @@
 <game>
     <ul>
         <% games.forEach(function(g) { %>
-            <h4><%= g.name %></h4>
-            <img src="<%g.image%>">
-            <button><a href="/games/<%= g._id%>">DETAILS</a></button>
+            <section>
+                <h4><%= g.name %></h4>
+                <img src="<%= g.image %>">
+                <button onclick= "window.location.href='/games/<%= g._id%>';">DETAILS</button>
+            </section>
         <% }); %>
     </ul>
 </game>

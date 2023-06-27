@@ -10,6 +10,8 @@ require('./config/database');
 
 var homeRouter = require('./routes/home');
 var gamesRouter = require('./routes/games');
+var reviewsRouter = require('./routes/reviews');
+var methodOverride = require('method-override');
 
 var app = express();
 
@@ -22,9 +24,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', homeRouter);
 app.use('/games', gamesRouter);
+app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

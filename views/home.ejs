@@ -1,3 +1,26 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>2023 Video Game Releases</h1>
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/games/AAA">AAA</a>
+        <a href="/games/Indie">INDIE</a>
+        <a href="/games/new">ADD GAME</a>
+    </nav>
+    <main>
+        
+        <div id="pic">
+            <img id="gaming" src="/images/pexels-pixabay-371924_Fotor.jpg">
+            <div id="top-left"><h3><%= title %></h3></div>
+        </div>
+
+        <h2>About</h2>
 
 <%- include('partials/footer') %>

@@ -3,9 +3,13 @@ const Game = require('../models/game');
 module.exports = {
     indexAAA,
     indexIndie,
+    indexAdmin,
+    edit,
     show,
     new: newGame,
-    create
+    create,
+    update,
+    delete: deleteGame
 }
 
 async function indexAAA(req, res) {
@@ -15,7 +19,17 @@ async function indexAAA(req, res) {
 
 async function indexIndie(req, res) {
     const games = await Game.find({ category: 'Indie' })
-    res.render('games/indie', { title: 'Indie Games', games })
+    res.render('games/Indie', { title: 'Indie Games', games })
+}
+
+async function indexAdmin(req, res) {
+    const games = await Game.find({});
+    res.render('games/admin', { title: 'Administration', games });
+}
+
+async function edit(req, res) {
+    const games = await Game.findById(req.params.id)
+    res.render('games/edit', { title: 'Edit Game', games });
 }
 
 async function show(req, res) {
@@ -34,5 +48,23 @@ async function create(req, res) {
     } catch (err) {
         console.log(err)
         res.render('games/new', { errorMsg: err.message });
+    }
+}
+
+async function update(req, res) {
+    try {
+        await Game.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.redirect('/games/admin');
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function deleteGame(req, res) {
+    try {
+        await Game.findByIdAndRemove(req.params.id);
+        res.redirect('/games/admin');
+    } catch (err) {
+        res.render('/games/admin', { errorMsg: err.message });
     }
 }
