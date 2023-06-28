@@ -9,7 +9,8 @@ module.exports = {
     new: newGame,
     create,
     update,
-    delete: deleteGame
+    delete: deleteGame,
+    filter
 }
 
 async function indexAAA(req, res) {
@@ -67,4 +68,10 @@ async function deleteGame(req, res) {
     } catch (err) {
         res.render('/games/admin', { errorMsg: err.message });
     }
+}
+
+async function filter(req, res) {
+    const games = await Game.find({ name: req.params.name, genre: req.params.genre, console: req.params.console })
+    res.render('games/AAA', { games })
+    console.log('done')
 }

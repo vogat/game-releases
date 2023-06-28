@@ -1,5 +1,34 @@
 <%- include('../partials/header') %>
 
+<form id="filters">
+    <div>Filters:</div>
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Genre:</label>
+    <select name="genre">
+        <option value="">[SELECT]</option>
+        <option value="Action">Action</option>
+        <option value="Action-Adventure">Action-Adventure</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="Role-playing">Role-playing</option>
+        <option value="Simulation">Simulation</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Sports">Sports</option>
+        <option value="MMO">MMO</option>
+        <option value="Other">Other</option>
+    </select>
+    <label>Console:</label>
+    <select name="console">
+        <option value="">[SELECT]</option>
+        <option value="Playstation">Playstation</option>
+        <option value="Xbox">Xbox</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="PC">PC</option>
+    </select>
+    <input type="submit" value="Apply">
+</form>
+
 <game>
     <ul>
         <% games.forEach(function(g) { %>

@@ -13,7 +13,7 @@
             <% games.reviews.forEach(function(g) { %>
                 <tr>
                     <td><form
-                        action="/games/<%= g.id %>/reviews?_method=DELETE"
+                        action="/games/<%= games.id %>/reviews/<%= g.id %>?_method=DELETE"
                         method="POST"
                         class="delete-review"
                         >

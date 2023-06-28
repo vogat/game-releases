@@ -6,6 +6,6 @@ router.get('/games/:id/editCom', reviewsCtrl.editCom);
 
 router.post('/games/:id/reviews', reviewsCtrl.create);
 
-router.delete('/games/:id/reviews', reviewsCtrl.delete)
+router.delete('/games/:id/reviews/:rid', reviewsCtrl.delete)
 
 module.exports = router;
