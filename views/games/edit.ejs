@@ -11,7 +11,8 @@
     <label>Release Date:</label>
     <input type="date" name="releaseDate" value="<%=games.releaseDate%>">
     <label>Genre:</label>
-    <select name="genre" value="<%=games.genre%>">
+    <select name="genre">
+        <option value="<%=games.genre%>"><%=games.genre%></option>
         <option value="Action">Action</option>
         <option value="Action-Adventure">Action-Adventure</option>
         <option value="Adventure">Adventure</option>
@@ -24,7 +25,8 @@
         <option value="Other">Other</option>
     </select>
     <label>Console:</label>
-    <select name="console" value="<%=games.console%>">
+    <select name="console">
+        <option value="<%=games.console%>"><%=games.console%></option>
         <option value="Playstation">Playstation</option>
         <option value="Xbox">Xbox</option>
         <option value="Nintendo">Nintendo</option>
@@ -33,7 +35,7 @@
     <label>Image URL link:</label>
     <input type="text" name="image" value="<%=games.image%>">
     <label>Description:</label>
-    <input type="text" name="description" value="<%=games.description%>">
+    <textarea name="description""><%=games.description%></textarea>
     <input type="submit" value="SUBMIT">
 </form>
 

@@ -191,3 +191,10 @@ h2 {
 #filters > div {
   text-decoration: underline;
 }
+
+p {
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 2.5vmin;
+  text-indent: 25px;
+}
