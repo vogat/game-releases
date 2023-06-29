@@ -1,5 +1,5 @@
 # game-releases
-This website will show current game releases for the year 2023. THis will include games that have already been released and games that will later in the year. The two main gaming categories will be AAA and Indie games. Allowing for users to add game mentions will help less well-known games to be included and delegate work.
+This website will show current game releases for the year 2023. This will include games that have already been released and games that will later in the year. The two main gaming categories will be AAA and Indie games. Allowing for users to add game mentions will help less well-known games to be included and delegate work.
 
 # schedule
 6/22 - basic CRUD
